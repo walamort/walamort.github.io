@@ -1,0 +1,165 @@
+[
+  {
+    "slug": "kalimba",
+    "nombre": "Kalimba",
+    "el": "la",
+    "de": "de la",
+    "un": "una",
+    "semana": "Semana del 5 de octubre de 2026",
+    "fecha": "2026-10-05",
+    "arte": "kalimba",
+    "cancion": "Hedwig's Theme",
+    "texto": "El «piano de pulgares». Lengüetas de metal sobre madera, con raíces en la mbira del pueblo shona de Zimbabue. Es casi imposible que suene mal.",
+    "descripcion": "Qué es la kalimba, de dónde viene, cómo se toca y cómo empezar a tocarla. Con videos, guía gratis en PDF y métodos por niveles de Walamort.",
+    "otros_nombres": "piano de pulgares, mbira, thumb piano",
+    "datos": [["17", "lengüetas"], ["Do", "mayor"], ["2", "pulgares"]],
+    "secciones": [
+      {
+        "titulo": "¿Qué es la kalimba?",
+        "parrafos": [
+          "La kalimba es un instrumento de lengüetas metálicas montadas sobre una tabla o una caja de madera. Se sostiene con las dos manos y se toca pulsando las lengüetas con los pulgares, por eso también se le llama «piano de pulgares». Pertenece a la familia de los lamelófonos: instrumentos en los que suena una lámina que vibra.",
+          "La kalimba más común hoy tiene 17 lengüetas afinadas en Do mayor. Las notas no van en orden de izquierda a derecha como en un piano: la más grave está en el centro y las demás se reparten a los lados, alternando. Así, las notas vecinas en la escala quedan una en cada mano."
+        ]
+      },
+      {
+        "titulo": "De dónde viene",
+        "parrafos": [
+          "Sus raíces están en África. Instrumentos de lengüetas como la mbira del pueblo shona de Zimbabue llevan siglos acompañando ceremonias, historias y celebraciones. Allí la mbira no es solo un instrumento: es una forma de comunicarse con los ancestros.",
+          "A mediados del siglo XX, el etnomusicólogo británico Hugh Tracey, que estudió durante décadas la música africana, diseñó una versión afinada en la escala occidental y la empezó a fabricar en Sudáfrica con el nombre de «kalimba». Esa versión es la abuela de casi todas las kalimbas que se venden hoy."
+        ]
+      },
+      {
+        "titulo": "Cómo se toca",
+        "parrafos": [
+          "Se sostiene con las manos a los lados y se pulsan las lengüetas con la parte de la uña de los pulgares, deslizando hacia abajo. Las kalimbas con caja tienen un agujero en la parte trasera: si lo tapas y destapas con un dedo mientras suena, consigues un efecto de vibrato muy característico.",
+          "Como todas sus notas pertenecen a la misma escala, es muy difícil que suene mal. Por eso es uno de los mejores instrumentos para empezar en la música: en pocos días ya puedes tocar melodías completas."
+        ]
+      }
+    ],
+    "curiosidades": [
+      "Las lengüetas más cortas suenan más agudo y las más largas, más grave.",
+      "Se afina golpeando suavemente las lengüetas hacia arriba o hacia abajo con un martillito.",
+      "En 2020, la UNESCO declaró Patrimonio Cultural Inmaterial el arte de construir y tocar la mbira en Malawi y Zimbabue."
+    ],
+    "faq": [
+      ["¿Es difícil aprender kalimba?", "No. Es uno de los instrumentos más fáciles para empezar: todas sus notas pertenecen a la misma escala, así que casi nada suena mal. Con la guía gratis de Walamort puedes tocar tus dos primeras canciones en pocos días."],
+      ["¿Cuántas lengüetas debe tener mi primera kalimba?", "La de 17 lengüetas en Do mayor es la más común y la que usan casi todas las partituras y tutoriales, incluidos los métodos de Walamort."],
+      ["¿Necesito saber leer partitura?", "No. La kalimba se suele escribir con números o letras sobre las lengüetas, y los métodos de Walamort te enseñan paso a paso."]
+    ],
+    "videos": [
+      {"id": "Y9g8OX6KB60", "titulo": "La kalimba y su historia"},
+      {"id": "zrThy7_yIe0", "titulo": "Hedwig's Theme (Harry Potter) en kalimba"},
+      {"id": "i2Cssg6ZYN4", "titulo": "Un beat hecho solo con una kalimba"}
+    ],
+    "lista": "https://www.youtube.com/playlist?list=PLikW7Tu39PBOa1fFCDsFG3wIb6QKCQKSb",
+    "tienda": "kalimba"
+  },
+  {
+    "slug": "handpan",
+    "nombre": "Handpan",
+    "el": "el",
+    "de": "del",
+    "un": "un",
+    "semana": "Semana del 12 de octubre de 2026",
+    "fecha": "2026-10-12",
+    "arte": "handpan",
+    "cancion": "Game of Thrones",
+    "texto": "El instrumento que suena a meditación. Dos semiesferas de acero que se tocan con las manos, nacido en Suiza en el año 2000 y heredero del steelpan del Caribe.",
+    "descripcion": "Qué es el handpan, cómo nació en Suiza, cómo se toca y cómo empezar. Con videos, guía gratis y métodos de handpan en Sol menor de Walamort.",
+    "otros_nombres": "hang, hang drum, pantam",
+    "datos": [["9", "notas"], ["Sol", "menor"], ["2", "manos"]],
+    "secciones": [
+      {
+        "titulo": "¿Qué es el handpan?",
+        "parrafos": [
+          "El handpan es un instrumento de percusión melódica hecho con dos semiesferas de acero unidas por el borde, como un platillo volador. En la cara superior tiene una nota central abombada, llamada ding, rodeada de varios campos de tono, cada uno afinado en una nota. Se toca con las yemas de los dedos y las palmas.",
+          "Cada handpan está afinado en una escala concreta. El de Walamort tiene 9 notas en Sol menor. Como todas las notas pertenecen a la misma escala, cualquier combinación suena armoniosa, y por eso su sonido se asocia tanto con la meditación y la relajación."
+        ]
+      },
+      {
+        "titulo": "De dónde viene",
+        "parrafos": [
+          "El primer instrumento de este tipo fue el Hang, creado por Felix Rohner y Sabina Schärer en el taller PANArt de Berna, Suiza, y presentado en el año 2000. «Hang» significa «mano» en el alemán de Berna. Sus creadores venían de fabricar steelpans, los tambores de acero de Trinidad y Tobago, y combinaron esa tradición con ideas de otros instrumentos del mundo.",
+          "Como el Hang era muy difícil de conseguir, otros fabricantes empezaron a construir instrumentos parecidos. Para nombrarlos a todos se popularizó la palabra «handpan»."
+        ]
+      },
+      {
+        "titulo": "Cómo se toca",
+        "parrafos": [
+          "Se apoya sobre las piernas o en un soporte y se golpea suavemente con los dedos, dejando que la mano rebote para que la nota resuene. El ding central da la nota más grave y sirve como base; los campos de alrededor tocan la melodía. Golpeando el borde o la superficie entre las notas se consiguen sonidos percusivos.",
+          "La cara inferior tiene una abertura llamada gu. Golpeándola con la palma se produce un bajo profundo, y abriéndola y cerrándola mientras suena se modifica el timbre."
+        ]
+      }
+    ],
+    "curiosidades": [
+      "El aire dentro de las dos semiesferas funciona como un resonador, igual que cuando soplas en la boca de una botella.",
+      "Un handpan puede desafinarse con golpes fuertes o con cambios bruscos de temperatura, así que conviene tocarlo con suavidad.",
+      "Hay handpans en decenas de escalas; algunas de las más populares tienen nombres como Kurd, Celtic o Amara."
+    ],
+    "faq": [
+      ["¿Es difícil tocar handpan?", "Sacarle un sonido bonito es fácil, porque todas sus notas pertenecen a la misma escala. Dominar la técnica, los ritmos y la improvisación lleva más tiempo, y para eso están los tres niveles del método de Walamort."],
+      ["¿Handpan y hang son lo mismo?", "El Hang es el instrumento original, creado en Suiza por PANArt. «Handpan» es el nombre general que se usa para todos los instrumentos de ese tipo, hechos por distintos fabricantes."],
+      ["¿Qué diferencia hay entre handpan y tongue drum?", "El handpan se toca golpeando campos de tono abombados y tiene un sonido largo y envolvente. El tongue drum tiene lengüetas recortadas en el metal, es más pequeño, más económico y se puede tocar con baquetas."]
+    ],
+    "videos": [
+      {"id": "q45UK7hkBb4", "titulo": "¿Qué es un handpan?"},
+      {"id": "lBIQ8NnWjAQ", "titulo": "Game of Thrones en handpan"},
+      {"id": "PnZE5YSeZf8", "titulo": "Handpan en vivo con base en FL Studio"}
+    ],
+    "lista": "",
+    "tienda": "handpan"
+  },
+  {
+    "slug": "tongue-drum",
+    "nombre": "Tongue drum",
+    "el": "el",
+    "de": "del",
+    "un": "un",
+    "semana": "Semana del 19 de octubre de 2026",
+    "fecha": "2026-10-19",
+    "arte": "tonguedrum",
+    "cancion": "",
+    "texto": "El pariente pequeño del handpan. Un tambor de acero con lengüetas recortadas en su superficie, cada una afinada en una nota. Nació en 2007, cuando Dennis Havlena cortó lengüetas en un tanque de gas vacío.",
+    "descripcion": "Qué es el tongue drum o tambor de lengüetas, cómo nació de un tanque de gas, cómo se toca y en qué se diferencia del handpan. Con videos de Walamort.",
+    "otros_nombres": "steel tongue drum, tambor de lengüetas, tank drum",
+    "datos": [["11", "lengüetas"], ["2", "formas de tocar"], ["2007", "año en que nació"]],
+    "secciones": [
+      {
+        "titulo": "¿Qué es el tongue drum?",
+        "parrafos": [
+          "El tongue drum, o tambor de lengüetas de acero, es un tambor metálico con lengüetas recortadas en su cara superior. Cada lengüeta está afinada en una nota: las más grandes suenan más grave y las más pequeñas, más agudo. El de Walamort tiene 11 lengüetas.",
+          "Igual que el handpan, suele estar afinado en una escala en la que todas las notas combinan entre sí. Por eso cualquier persona, aunque nunca haya tocado música, puede sacarle melodías agradables desde el primer minuto."
+        ]
+      },
+      {
+        "titulo": "De dónde viene",
+        "parrafos": [
+          "La historia moderna del tongue drum empieza en 2007, cuando el estadounidense Dennis Havlena, inspirado en el Hang suizo, recortó lengüetas en un tanque de gas propano vacío. Así nació el «tank drum», un instrumento que cualquiera podía construir y que se difundió rápidamente.",
+          "La idea de un tambor con lengüetas talladas es mucho más antigua: los tambores de hendidura de madera existen desde hace siglos en África, Asia y América, como el teponaztli de los pueblos de México."
+        ]
+      },
+      {
+        "titulo": "Cómo se toca",
+        "parrafos": [
+          "Tiene dos formas de tocarse. Con baquetas de punta de goma, que dan un sonido claro y brillante, o con las yemas de los dedos, que dan un sonido más suave y cálido. Lo ideal es golpear el centro de cada lengüeta y retirar rápido la baqueta o el dedo para que la nota resuene.",
+          "Es más pequeño, más ligero y más económico que un handpan, por eso es muy popular para meditación, musicoterapia y para que niños y adultos empiecen a tocar."
+        ]
+      }
+    ],
+    "curiosidades": [
+      "Los primeros tank drums se hacían con tanques de gas reciclados; hoy se fabrican con acero diseñado para sonar mejor.",
+      "La forma de cada lengüeta, no solo su tamaño, cambia la nota y el timbre.",
+      "Muchos tongue drums traen números o notas grabadas en cada lengüeta para tocar con partituras numéricas."
+    ],
+    "faq": [
+      ["¿Tongue drum y handpan son lo mismo?", "No. El handpan tiene campos de tono abombados y un sonido más largo y profundo. El tongue drum tiene lengüetas recortadas, es más pequeño y económico, y se puede tocar con baquetas o con los dedos."],
+      ["¿Es bueno para empezar en la música?", "Sí. Como sus notas pertenecen a una misma escala, todo suena bien desde el principio. Es ideal para niños, para meditación y para cualquier persona que nunca haya tocado un instrumento."],
+      ["¿Se toca con baquetas o con las manos?", "De las dos maneras. Las baquetas dan un sonido más brillante y fuerte; los dedos, uno más suave e íntimo."]
+    ],
+    "videos": [
+      {"id": "yRpA4eIC70I", "titulo": "¿Qué es un tongue drum? El tambor que nació de un tanque de gas"}
+    ],
+    "lista": "",
+    "tienda": ""
+  }
+]
