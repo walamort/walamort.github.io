@@ -40,7 +40,7 @@ def jsonld(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("</", "<\\/") + "</script>"
 
 PERSONA = {"@type": "Person", "name": "Walter Agudelo Múnera", "alternateName": "Walamort",
-           "jobTitle": "Músico, productor musical y docente", "url": BASE + "/",
+           "jobTitle": "Músico, productor musical y docente", "url": BASE + "/", "email": "hola@walamort.com",
            "sameAs": [u for _, u in REDES]}
 
 def head(titulo, desc, ruta, raiz, extra="", imagen=None, tipo="website"):
