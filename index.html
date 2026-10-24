@@ -885,7 +885,7 @@ document.querySelectorAll('.copy').forEach(function(b){
     var msg = document.getElementById("mlmsg"), b = f.querySelector("button");
     b.disabled = true; msg.textContent = "Enviando…";
     fetch(f.action, { method: "POST", body: new FormData(f), mode: "no-cors" })
-      .then(function () { msg.textContent = "¡Listo! Revisa tu correo (y la carpeta de spam). Mientras tanto, puedes descargar las guías aquí arriba."; f.reset(); })
+      .then(function () { msg.textContent = "¡Listo! Revisa tu correo y toca «Confirmar»: enseguida te llegan las guías. Si no lo ves, mira en spam o promociones."; f.reset(); })
       .catch(function () { msg.textContent = "No se pudo enviar. Descarga las guías aquí arriba o escríbeme por WhatsApp."; })
       .then(function () { b.disabled = false; });
   });
