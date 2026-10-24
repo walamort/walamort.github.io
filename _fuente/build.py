@@ -47,7 +47,7 @@ PERSONA = {"@type": "Person", "name": "Walter Agudelo Múnera", "alternateName":
 
 def head(titulo, desc, ruta, raiz, extra="", imagen=None, tipo="website"):
     url = BASE + "/" + ruta
-    img = imagen or (BASE + "/og.jpg")
+    img = imagen or (BASE + "/og.jpg?v=2")
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>{e(titulo)}</title>
