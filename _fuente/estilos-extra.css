@@ -36,3 +36,14 @@
 .foot-links a{color:var(--muted);text-decoration:none}
 .foot-links a:hover{color:var(--fg)}
 @media (max-width:820px){.ihero{padding-block:24px 48px}.prose p{font-size:17px}.pnav{grid-template-columns:1fr}.pn.next{grid-column:auto}}
+
+.mlform{margin-top:28px;display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.mlform h3{font-size:22px;margin:6px 0 8px}
+.mlform p{color:var(--muted);margin:0}
+.mlfields{display:grid;gap:10px}
+.mlfields input[type=text],.mlfields input[type=email]{font:inherit;font-size:16px;padding:13px 16px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.mlfields input::placeholder{color:var(--muted)}
+.mlfields .btn{justify-self:start}
+.mlmsg{font-size:14px;min-height:1em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (max-width:760px){.mlform{grid-template-columns:1fr;padding:20px}}

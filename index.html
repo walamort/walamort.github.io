@@ -309,6 +309,23 @@
       </div>
     </div>
     </div>
+    <form class="mlform" id="mlform" action="https://assets.mailerlite.com/jsonp/2738592/forms/202212775625229469/subscribe" method="post">
+      <div class="mltext">
+        <span class="eyebrow">Gratis en tu correo</span>
+        <h3>Recibe las tres guías gratis en tu correo</h3>
+        <p>Kalimba, handpan y tongue drum en un solo correo, y entérate primero de los nuevos métodos, instrumentos y clases. Sin spam: te das de baja cuando quieras.</p>
+      </div>
+      <div class="mlfields">
+        <label class="sr" for="ml-name">Tu nombre</label>
+        <input id="ml-name" type="text" name="fields[name]" placeholder="Tu nombre" autocomplete="given-name">
+        <label class="sr" for="ml-email">Tu correo</label>
+        <input id="ml-email" type="email" name="fields[email]" placeholder="Tu correo" autocomplete="email" required>
+        <input type="hidden" name="ml-submit" value="1">
+        <input type="hidden" name="anticsrf" value="true">
+        <button class="btn solid" type="submit">Enviármelas</button>
+        <p class="mlmsg" id="mlmsg" role="status"></p>
+      </div>
+    </form>
     <p class="lead" style="margin-top:22px;font-size:15px">Pago seguro con Hotmart: recibes el PDF en tu correo apenas se confirma el pago, listo para el celular o el computador. ¿Dudas? Escríbeme por WhatsApp. Próximamente: sample packs con los sonidos de cada instrumento.</p>
   </div>
 </section>
@@ -861,6 +878,18 @@ document.querySelectorAll('.copy').forEach(function(b){
 
 })();
 
+(function () {
+  var f = document.getElementById("mlform"); if (!f) return;
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var msg = document.getElementById("mlmsg"), b = f.querySelector("button");
+    b.disabled = true; msg.textContent = "Enviando…";
+    fetch(f.action, { method: "POST", body: new FormData(f), mode: "no-cors" })
+      .then(function () { msg.textContent = "¡Listo! Revisa tu correo (y la carpeta de spam). Mientras tanto, puedes descargar las guías aquí arriba."; f.reset(); })
+      .catch(function () { msg.textContent = "No se pudo enviar. Descarga las guías aquí arriba o escríbeme por WhatsApp."; })
+      .then(function () { b.disabled = false; });
+  });
+})();
 </script>
 
 </body></html>
