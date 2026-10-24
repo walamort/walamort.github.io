@@ -324,6 +324,33 @@ def pagina_404():
 </html>
 """
 
+def pagina_privacidad():
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+{head('Política de privacidad | Walamort', 'Cómo Walamort trata los datos personales de quienes se suscriben, compran o reservan clases.', 'privacidad/', '/')}
+</head>
+<body>
+{nav('/')}
+<main id="contenido"><section style="border-top:0"><div class="wrap"><div class="head" style="max-width:760px">
+<span class="eyebrow">Legal</span>
+<h1 class="h1s">Política de <em class="script">privacidad</em></h1>
+<p class="lead">Walamort (Walter Agudelo Múnera, Bello, Antioquia, Colombia) es responsable del tratamiento de los datos personales que recibe a través de walamort.com, sus formularios, WhatsApp y correo, conforme a la Ley 1581 de 2012 de Colombia.</p>
+<h2 class="ph">Qué datos recogemos</h2>
+<p>Tu nombre y correo cuando te suscribes para recibir las guías gratis, y los datos que nos compartes al escribirnos o reservar una clase. Los pagos de los métodos los procesa Hotmart: Walamort no recibe ni guarda los datos de tu tarjeta.</p>
+<h2 class="ph">Para qué los usamos</h2>
+<p>Para enviarte las guías que pediste, responder tus mensajes, coordinar tus clases y, si te suscribes, enviarte novedades sobre instrumentos, métodos, clases y talleres. Nunca vendemos ni cedemos tus datos.</p>
+<h2 class="ph">Con quién se comparten</h2>
+<p>Con los servicios que hacen posible el envío y el cobro: MailerLite (correos) y Hotmart (pagos), que los tratan bajo sus propias políticas de seguridad.</p>
+<h2 class="ph">Tus derechos</h2>
+<p>Puedes conocer, actualizar, rectificar o pedir la eliminación de tus datos, y darte de baja de los correos en cualquier momento con el enlace que aparece al final de cada uno. Para cualquier solicitud escribe a <a href="mailto:hola@walamort.com">hola@walamort.com</a>; te responderemos en un plazo máximo de 15 días hábiles.</p>
+<p class="lead" style="font-size:14px">Última actualización: 24 de octubre de 2026.</p>
+</div></div></section></main>
+{pie('/')}
+</body>
+</html>
+"""
+
 def sitemap():
     urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8")] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
@@ -336,6 +363,7 @@ def main():
     for i, x in enumerate(INST):
         escribir(f"instrumentos/{x['slug']}/index.html", pagina_instrumento(i, x))
     escribir("404.html", pagina_404())
+    escribir("privacidad/index.html", pagina_privacidad())
     escribir("sitemap.xml", sitemap())
     escribir("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     if SITIO.get("dominio"):
