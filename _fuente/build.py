@@ -8,6 +8,7 @@ Para un instrumento nuevo: agrega un objeto al final de _fuente/instrumentos.jso
 en el objeto ARTE de _fuente/plantilla-inicio.html. Luego ejecuta este script.
 Cuando tengas dominio propio, cambia BASE_URL en _fuente/sitio.json.
 """
+GUIAS = {'kalimba': 'Kalimba-Primeros-Pasos-Walamort.pdf', 'handpan': 'Handpan-Primeros-Pasos-Walamort.pdf', 'tongue-drum': 'Tongue-Drum-Primeros-Pasos-Walamort.pdf'}
 import html, json, os, re, datetime
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -138,7 +139,8 @@ def pagina_instrumento(i, inst):
         <p>Guía gratuita para tus primeros pasos y métodos Walamort en tres niveles, de principiante a creador.</p>
       </div>
       <div class="packbuy">
-        <a class="btn" href="{raiz}#tienda">Ver guía gratis y métodos</a>
+        <a class="btn" href="{raiz}descargas/{GUIAS.get(inst['slug'], '')}" target="_blank" rel="noopener">Descargar guía gratis</a>
+        <a class="btn" href="{raiz}#tienda" style="margin-top:8px">Ver los métodos</a>
       </div>
     </div>"""
     else:
