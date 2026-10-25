@@ -91,7 +91,7 @@ def pie(raiz):
     return f"""<div class="stripes" aria-hidden="true"><i></i><i></i><i></i></div>
 <footer>
   <div class="wrap">
-    <span>© {datetime.date.today().year} Walamort · Walter Agudelo Múnera · <a href="{raiz}talleres/">Talleres</a> · <a href="{raiz}guias/">Guías de compra</a> · <a href="{raiz}idiomas/">Idiomas</a> · <a href="{raiz}pt/" lang="pt-BR">Em português</a> · <a href="{raiz}privacidad/">Privacidad</a></span>
+    <span>© {datetime.date.today().year} Walamort · Walter Agudelo Múnera · <a href="{raiz}talleres/">Talleres</a> · <a href="{raiz}guias/">Guías de compra</a> · <a href="{raiz}pt/" lang="pt-BR">Em português</a> · <a href="{raiz}privacidad/">Privacidad</a></span>
     <span class="foot-links">{redes}</span>
   </div>
 </footer>"""
@@ -295,7 +295,7 @@ def pagina_inicio():
                          "texto": x["texto"], "datos": x["datos"], "arte": x["arte"], "cancion": x["cancion"], "videos": vids})
     cur = INST[-1]
     desc = (f"Walamort: un instrumento del mundo cada semana. Esta semana, {cur['el']} {cur['nombre'].lower()}. "
-            "Guías gratis y métodos de kalimba y handpan, y clases virtuales de música y de portugués con Walter Agudelo Múnera.")
+            "Guías gratis y métodos de kalimba y handpan, clases virtuales de música y talleres con Walter Agudelo Múnera.")
     ld = "\n".join([
         jsonld({"@context": "https://schema.org", "@type": "WebSite", "name": "Walamort", "url": BASE + "/", "inLanguage": "es"}),
         jsonld(dict({"@context": "https://schema.org"}, **PERSONA)),
@@ -354,6 +354,8 @@ def pagina_privacidad():
 </html>
 """
 
+REDIRECT = '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=/#clases"><link rel="canonical" href="https://walamort.com/#clases"><title>Walamort</title></head><body><a href="/#clases">Clases Walamort</a></body></html>\n'
+
 LANGS_HTML = '      <div class="langgrid">\n        <article class="lang">\n          <span class="tag">Para hispanohablantes</span>\n          <h3>Portugués de Brasil</h3>\n          <p>Aprende a hablar con naturalidad: pronunciación, expresiones del día a día y los «falsos amigos» que confunden a los hispanohablantes. Ideal para viajar, trabajar o estudiar en Brasil.</p>\n          <ul class="list"><li>Conversación desde la primera clase</li><li>Pronunciación y acento brasileño</li><li>Gramática práctica, sin memorizar listas</li><li>Música brasileña para aprender escuchando</li></ul>\n        </article>\n        <article class="lang" lang="pt-BR">\n          <span class="tag">Para falantes de português</span>\n          <h3>Espanhol para brasileiros</h3>\n          <p>Aulas de espanhol por videochamada com um professor colombiano. Fale com segurança, evite os falsos cognatos e conheça o espanhol da América Latina.</p>\n          <ul class="list"><li>Conversação desde a primeira aula</li><li>Pronúncia e sotaque latino-americano</li><li>Gramática prática e sem complicação</li><li>Música latina para aprender ouvindo</li></ul>\n        </article>\n      </div>\n      <div class="plans langplans">\n        <article class="plan"><span class="tag">Prueba · Aula teste</span><h3>30 minutos</h3><p class="price">$20.000 COP <small>USD 6</small></p></article>\n        <article class="plan"><span class="tag">Individual</span><h3>60 minutos</h3><p class="price">$45.000 COP <small>USD 12</small></p></article>\n        <article class="plan best"><span class="tag">Más elegido · Mais escolhido</span><h3>4 clases · 4 aulas</h3><p class="price">$160.000 COP <small>USD 43 · ahorras $20.000</small></p></article>\n        <article class="plan"><span class="tag">Constancia</span><h3>8 clases · 8 aulas</h3><p class="price">$300.000 COP <small>USD 80 · ahorras $60.000</small></p></article>\n      </div>\n    '
 
 def pagina_idiomas():
@@ -385,7 +387,7 @@ def pagina_idiomas():
 """
 
 def sitemap():
-    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("idiomas/", HOY, "0.7")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
+    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{filas}</urlset>\n'
 
@@ -399,7 +401,7 @@ def main():
         escribir(f"instrumentos/{x['slug']}/index.html", pagina_instrumento(i, x))
     escribir("404.html", pagina_404())
     escribir("privacidad/index.html", pagina_privacidad())
-    escribir("idiomas/index.html", pagina_idiomas())
+    escribir("idiomas/index.html", REDIRECT)
     escribir_paginas_nuevas()
     escribir("sitemap.xml", sitemap())
     escribir("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")

@@ -288,7 +288,7 @@ def pagina_pt():
     <span class="eyebrow">Walamort em português</span>
     <h1 class="h1s">Um instrumento novo <em class="script">toda semana.</em></h1>
     <p class="lead">Olá! Eu sou o Walter Agudelo Múnera, músico, produtor e professor em Medellín, na Colômbia. Toda semana apresento um instrumento do mundo: sua história, um beat com seus sons e a música que a comunidade escolhe. Falo português e preparei guias grátis para você começar a tocar.</p>
-    <div class="btns"><a class="btn solid" href="#guias">Guias grátis</a><a class="btn ghost" href="/idiomas/">Aulas de espanhol</a></div>
+    <div class="btns"><a class="btn solid" href="#guias">Guias grátis</a><a class="btn ghost" href="/#tienda">Ver os métodos</a></div>
   </div>
   <img src="/fotos/walter-saxofon-medellin.webp" alt="Walter Agudelo Múnera tocando saxofone em Medellín" width="900" height="1125" style="aspect-ratio:4/5;max-width:420px;justify-self:end">
 </div>
@@ -297,12 +297,9 @@ def pagina_pt():
 <h2 class="ph">Métodos completos</h2>
 <p>Os métodos por níveis (básico, intermediário e avançado) de kalimba, handpan e tongue drum estão em espanhol, com notação por números, muito fácil de acompanhar mesmo sem falar espanhol. O pagamento é seguro, pela Hotmart.</p>
 <div class="btns" style="margin-top:14px"><a class="btn ghost" href="/#tienda">Ver os métodos</a></div>
-<h2 class="ph">Aulas on-line</h2>
-<p>Aulas de espanhol por videochamada para brasileiros, com um professor colombiano: conversação desde a primeira aula, pronúncia latino-americana e música latina para aprender ouvindo.</p>
-<div class="btns" style="margin-top:14px"><a class="btn solid" href="/?tema=Espanhol%20para%20brasileiros#reservar">Agendar aula de espanhol</a><a class="btn ghost" href="https://wa.me/573053650966?text=Ol%C3%A1%20Walter!" target="_blank" rel="noopener">Falar pelo WhatsApp</a></div>
 </div></section>"""
     return doc("Walamort em português: guias grátis de kalimba, handpan e tongue drum",
-               "Guias grátis em português para começar a tocar kalimba, handpan e tongue drum, e aulas de espanhol por videochamada com Walter Agudelo Múnera.",
+               "Guias grátis em português para começar a tocar kalimba, handpan e tongue drum com Walter Agudelo Múnera, criador da série Instrumento da semana.",
                "pt/", cuerpo, extra=alt, lang="pt-BR")
 
 def escribir_paginas_nuevas():
