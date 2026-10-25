@@ -80,6 +80,7 @@ def nav(raiz):
       <li><a href="{raiz}#tienda">Métodos</a></li>
       <li><a href="{raiz}#clases">Clases</a></li>
       <li><a href="{raiz}#contacto">Contacto</a></li>
+      <li><a class="navpt" href="{raiz}pt/" lang="pt-BR" title="Em português">PT</a></li>
     </ul>
   </div>
   <div class="stripes" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -90,7 +91,7 @@ def pie(raiz):
     return f"""<div class="stripes" aria-hidden="true"><i></i><i></i><i></i></div>
 <footer>
   <div class="wrap">
-    <span>© {datetime.date.today().year} Walamort · Walter Agudelo Múnera · <a href="{raiz}idiomas/">Clases de idiomas</a> · <a href="{raiz}privacidad/">Privacidad</a></span>
+    <span>© {datetime.date.today().year} Walamort · Walter Agudelo Múnera · <a href="{raiz}talleres/">Talleres</a> · <a href="{raiz}guias/">Guías de compra</a> · <a href="{raiz}idiomas/">Idiomas</a> · <a href="{raiz}pt/" lang="pt-BR">Em português</a> · <a href="{raiz}privacidad/">Privacidad</a></span>
     <span class="foot-links">{redes}</span>
   </div>
 </footer>"""
@@ -299,6 +300,7 @@ def pagina_inicio():
         jsonld({"@context": "https://schema.org", "@type": "WebSite", "name": "Walamort", "url": BASE + "/", "inLanguage": "es"}),
         jsonld(dict({"@context": "https://schema.org"}, **PERSONA)),
     ])
+    ld += f'\n<link rel="alternate" hreflang="es" href="{BASE}/">\n<link rel="alternate" hreflang="pt-BR" href="{BASE}/pt/">'
     h = head("Walamort · Un instrumento del mundo cada semana", desc, "", "", ld)
     out = PLANTILLA.replace("{{HEAD}}", h).replace("/*INSTRUMENTOS*/", json.dumps(datos_js, ensure_ascii=False, indent=1))
     out = out.replace('<main>', '<main id="contenido">', 1)
@@ -383,9 +385,11 @@ def pagina_idiomas():
 """
 
 def sitemap():
-    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("idiomas/", HOY, "0.7")] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
+    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("idiomas/", HOY, "0.7")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{filas}</urlset>\n'
+
+exec(open(os.path.join(FUENTE, "paginas.py"), encoding="utf8").read())
 
 def main():
     escribir("estilos.css", leer("estilos-base.css") + "\n" + leer("estilos-extra.css"))
@@ -396,6 +400,7 @@ def main():
     escribir("404.html", pagina_404())
     escribir("privacidad/index.html", pagina_privacidad())
     escribir("idiomas/index.html", pagina_idiomas())
+    escribir_paginas_nuevas()
     escribir("sitemap.xml", sitemap())
     escribir("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     if SITIO.get("dominio"):
