@@ -309,6 +309,9 @@ def pagina_inicio():
     out = out.replace('<nav aria-label="Principal">', '<a class="skip" href="#contenido">Saltar al contenido</a>\n<nav aria-label="Principal">', 1)
     return out
 
+def pagina_virtuales():
+    return "<!doctype html><html lang=\"es\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Instrumentos virtuales | Walamort</title><meta name=\"description\" content=\"Toca instrumentos musicales virtuales de Walamort: explora sonidos, escalas, efectos y melodías desde tu navegador.\"><link rel=\"canonical\" href=\"https://walamort.com/instrumentos-virtuales/\"><meta name=\"theme-color\" content=\"#2B0D14\"><link rel=\"icon\" href=\"../favicon.svg\" type=\"image/svg+xml\"><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Lora:ital,wght@1,500&display=swap\"><link rel=\"stylesheet\" href=\"../estilos.css\"></head><body><a class=\"skip\" href=\"#contenido\">Saltar al contenido</a><nav aria-label=\"Principal\"><div class=\"wrap\"><a class=\"logo\" href=\"../\">Wala<span>mort</span></a><ul><li><a href=\"../#semana\">Esta semana</a></li><li><a href=\"../instrumentos/\">Instrumentos</a></li><li><a href=\"./\" aria-current=\"page\">Virtuales</a></li><li><a href=\"../#tienda\">Métodos</a></li><li><a href=\"../#clases\">Clases</a></li><li><a href=\"../#contacto\">Contacto</a></li></ul></div><div class=\"stripes\" aria-hidden=\"true\"><i></i><i></i><i></i></div></nav><main id=\"contenido\"><section style=\"border-top:0\"><div class=\"wrap\"><div class=\"head\"><span class=\"eyebrow\">Walamort Studio</span><h1 class=\"h1s\">Instrumentos <em class=\"script\">virtuales</em></h1><p class=\"lead\">Un espacio para experimentar con el sonido, tocar y crear música desde tu navegador.</p></div><div class=\"archive\"><a class=\"inst icard\" href=\"../instrumentos/tongue-drum/studio/\"><span class=\"tag\">Disponible</span><h3>Tongue Drum Studio</h3><p>Toca ocho notas, cambia escalas y efectos, graba melodías y explora el instrumento.</p><span class=\"more\">Tocar ahora →</span></a></div><p class=\"lead\" style=\"margin-top:24px;font-size:15px\">Próximamente, más instrumentos virtuales.</p></div></section></main><div class=\"stripes\" aria-hidden=\"true\"><i></i><i></i><i></i></div><footer><div class=\"wrap\"><span>© 2026 Walamort · <a href=\"../\">Inicio</a> · <a href=\"../instrumentos/\">Instrumentos</a></span></div></footer></body></html>"
+
 def pagina_404():
     return f"""<!doctype html>
 <html lang="es">
@@ -389,7 +392,7 @@ def pagina_idiomas():
 """
 
 def sitemap():
-    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
+    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("instrumentos-virtuales/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{filas}</urlset>\n'
 
@@ -398,6 +401,7 @@ exec(open(os.path.join(FUENTE, "paginas.py"), encoding="utf8").read())
 def main():
     escribir("estilos.css", leer("estilos-base.css") + "\n" + leer("estilos-extra.css"))
     escribir("index.html", pagina_inicio())
+    escribir("instrumentos-virtuales/index.html", pagina_virtuales())
     escribir("instrumentos/index.html", pagina_archivo())
     for i, x in enumerate(INST):
         escribir(f"instrumentos/{x['slug']}/index.html", pagina_instrumento(i, x))
