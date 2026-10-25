@@ -156,6 +156,7 @@ def pagina_instrumento(i, inst):
         <a class="btn" href="{raiz}#clases">Ver clases</a>
       </div>
     </div>"""
+    studio_cta = ('<section aria-label="Estudio virtual de tongue drum"><div class="wrap"><div class="pack"><div><span class="eyebrow" style="color:#2B0D14">Instrumento interactivo</span><h3>Tongue Drum Studio</h3><p>Toca ocho notas, explora escalas y efectos, graba tus melodías y experimenta con el sonido.</p></div><div class="packbuy"><a class="btn" href="studio/">Abrir instrumento virtual</a></div></div></div></section>' if inst["slug"] == "tongue-drum" else "")
     prev_ = INST[i - 1] if i > 0 else None
     next_ = INST[i + 1] if i < len(INST) - 1 else None
     pn = ""
@@ -213,6 +214,7 @@ def pagina_instrumento(i, inst):
   </div>
 </section>
 
+{studio_cta}
 <section id="videos">
   <div class="wrap">
     <div class="head">
