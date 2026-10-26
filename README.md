@@ -35,3 +35,15 @@ y configura el dominio en GitHub (Settings → Pages → Custom domain).
 1. Inventario revisado: nombre por ejemplar, identificador, constructor si se conoce, procedencia documentada, medidas, material, afinación y estado. Marcar desconocidos.
 2. Fotos identificadas por ejemplar y autorización de uso; audio/video propio y créditos, con permiso para publicarlo.
 3. Curso: aprobación del programa, lecciones y materiales, modalidad, duración, fechas y acompañamiento. Definir precio, condiciones y autorización expresa antes de integrar venta o pagos.
+
+## Rediseño editorial
+
+La identidad compartida usa papel crema, vino y cobre, tipografía editorial y fotografías existentes sin filtros. La portada prioriza escenario; Academy usa flauta; la sección de servicios usa estudio. Los estudios virtuales existentes conservan su funcionamiento.
+
+- Academy: `_fuente/explora/academia.html` reúne recursos disponibles.
+- Curso: `_fuente/explora/curso.html` genera `/academia/exploracion-instrumentos-del-mundo/`; continúa en preparación, sin pagos.
+- El acceso antiguo `/test/` conduce al test actualizado. El resultado permite revisar las condiciones y editar respuestas; no almacena ni envía información.
+- Verificación reproducible: `python _fuente/build.py`, `python _fuente/check-static.py`, `node _fuente/check-quiz.cjs`. La revisión de navegador cubrió 320, 390 y 1440 px, filtros, pestañas con teclado, respuestas y calendario. No se realizaron compras ni se enviaron reservas o suscripciones.
+- Los enlaces de Hotmart, precios, PDFs, formulario de correo y solicitudes de clases existentes se conservan. La preservación de enlaces no verifica el procesamiento de una compra en Hotmart.
+
+Antes de ampliar el museo se necesitan fichas revisadas de cada ejemplar, fotografías identificadas, procedencia documentada y muestras propias de audio/video con permisos. Para lanzar el curso faltan lecciones y materiales finales, modalidad, duración, fechas, acompañamiento y condiciones de venta aprobadas. Para mostrar proyectos de producción se necesitan audios, créditos y autorización. No se han añadido testimonios ni productos ficticios.

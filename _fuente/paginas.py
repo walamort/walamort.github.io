@@ -208,7 +208,7 @@ def pagina_guia_compra(slug):
 <h2 class="ph">Cuando lo tengas en las manos</h2>
 <p>Descarga la guía gratis para dar tus primeros pasos y, cuando quieras ir más lejos, sigue con el método por niveles.</p>
 {cta_instrumento(slug, guia_compra=False)}
-<p class="lead" style="margin-top:28px;font-size:15px">¿Aún no sabes qué instrumento elegir? <a href="/test/">Haz el test de un minuto</a>. Otras guías de compra: {otros}.</p>
+<p class="lead" style="margin-top:28px;font-size:15px">¿Aún no sabes qué instrumento elegir? <a href="/test-instrumento/">Explora tus preferencias musicales</a>. Otras guías de compra: {otros}.</p>
 </div></section>"""
     return doc(f"{g['titulo']} {g['t2']} | Walamort", g["desc"], f"guias/{slug}/", cuerpo, extra=jsonld(art))
 
@@ -222,7 +222,7 @@ def pagina_guias():
   <p class="lead">Lo que miraría yo antes de comprar mi primer instrumento, sin marcas patrocinadas: solo criterios para que suene bien y te dure.</p>
 </div>
 <div class="gcards">{cards}</div>
-<p class="lead" style="margin-top:24px;font-size:15px">¿No sabes por cuál empezar? <a href="/test/">Haz el test de un minuto</a>.</p>
+<p class="lead" style="margin-top:24px;font-size:15px">¿No sabes por cuál empezar? <a href="/test-instrumento/">Explora tus preferencias musicales</a>.</p>
 </div></section>"""
     return doc("Guías de compra: kalimba, handpan y tongue drum | Walamort",
                "Qué kalimba, handpan o tongue drum comprar para empezar: criterios claros, errores frecuentes y recomendaciones de Walamort.",
@@ -303,11 +303,11 @@ def pagina_pt():
                "pt/", cuerpo, extra=alt, lang="pt-BR")
 
 def escribir_paginas_nuevas():
-    escribir("test/index.html", pagina_test())
+    escribir("test/index.html", '<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="0;url=/test-instrumento/"><link rel="canonical" href="https://walamort.com/test-instrumento/"><title>Test musical | Walamort</title></head><body><main><h1>Test musical Walamort</h1><p><a href="/test-instrumento/">Continuar al test de orientación musical</a></p></main></body></html>')
     escribir("guias/index.html", pagina_guias())
     for k in GUIAS_COMPRA:
         escribir(f"guias/{k}/index.html", pagina_guia_compra(k))
     escribir("talleres/index.html", pagina_talleres())
     escribir("pt/index.html", pagina_pt())
 
-PAGINAS_SITEMAP = [("test/", "0.8"), ("guias/", "0.7"), ("talleres/", "0.8"), ("pt/", "0.8")] + [(f"guias/{k}/", "0.7") for k in GUIAS_COMPRA]
+PAGINAS_SITEMAP = [("guias/", "0.7"), ("talleres/", "0.8"), ("pt/", "0.8")] + [(f"guias/{k}/", "0.7") for k in GUIAS_COMPRA]

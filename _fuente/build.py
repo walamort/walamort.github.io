@@ -81,6 +81,8 @@ def nav(raiz):
       <li><a href="{raiz}academia/">Academy</a></li>
       <li><a href="{raiz}museo/">Museo</a></li>
       <li><a href="{raiz}test-instrumento/">Test musical</a></li>
+      <li><a href="{raiz}instrumentos-virtuales/">Virtuales</a></li>
+      <li><a href="{raiz}#servicios">Servicios</a></li>
       <li><a href="{raiz}#clases">Clases</a></li>
       <li><a href="{raiz}#contacto">Contacto</a></li>
       <li><a class="navpt" href="{raiz}pt/" lang="pt-BR" title="Em português">PT</a></li>
@@ -306,7 +308,8 @@ def pagina_inicio():
         jsonld(dict({"@context": "https://schema.org"}, **PERSONA)),
     ])
     ld += f'\n<link rel="alternate" hreflang="es" href="{BASE}/">\n<link rel="alternate" hreflang="pt-BR" href="{BASE}/pt/">'
-    h = head("Walamort · Un instrumento del mundo cada semana", desc, "", "", ld)
+    desc = "Instrumentos del mundo con Walter Agudelo Múnera: museo sonoro, Walamort Academy, métodos, clases e instrumentos virtuales. Escucha, aprende y crea desde Medellín."
+    h = head("Walamort · Instrumentos del mundo, Academy y estudio creativo", desc, "", "", ld, imagen=BASE + "/fotos/escenario.webp")
     out = PLANTILLA.replace("{{HEAD}}", h).replace("/*INSTRUMENTOS*/", json.dumps(datos_js, ensure_ascii=False, indent=1))
     out = out.replace('<main>', '<main id="contenido">', 1)
     out = out.replace('<nav aria-label="Principal">', '<a class="skip" href="#contenido">Saltar al contenido</a>\n<nav aria-label="Principal">', 1)
@@ -395,7 +398,7 @@ def pagina_idiomas():
 """
 
 def sitemap():
-    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("instrumentos-virtuales/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP + [("academia/", "0.8"), ("museo/", "0.8"), ("test-instrumento/", "0.8")]] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
+    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("instrumentos-virtuales/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP + [("academia/", "0.8"), ("academia/exploracion-instrumentos-del-mundo/", "0.8"), ("museo/", "0.8"), ("test-instrumento/", "0.8")]] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{filas}</urlset>\n'
 
@@ -415,6 +418,7 @@ def main():
     for slug in ("academia", "museo", "test-instrumento"):
         escribir(f"{slug}/index.html", leer(f"explora/{slug}.html"))
     exec(compile(leer("museo.py"), "museo.py", "exec"), globals())
+    escribir("academia/exploracion-instrumentos-del-mundo/index.html", leer("explora/curso.html"))
     escribir("sitemap.xml", sitemap())
     escribir("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     if SITIO.get("dominio"):
