@@ -78,6 +78,9 @@ def nav(raiz):
       <li><a href="{raiz}#semana">Esta semana</a></li>
       <li><a href="{raiz}instrumentos/">Instrumentos</a></li>
       <li><a href="{raiz}#tienda">Métodos</a></li>
+      <li><a href="{raiz}academia/">Academy</a></li>
+      <li><a href="{raiz}museo/">Museo</a></li>
+      <li><a href="{raiz}test-instrumento/">Test musical</a></li>
       <li><a href="{raiz}#clases">Clases</a></li>
       <li><a href="{raiz}#contacto">Contacto</a></li>
       <li><a class="navpt" href="{raiz}pt/" lang="pt-BR" title="Em português">PT</a></li>
@@ -392,7 +395,7 @@ def pagina_idiomas():
 """
 
 def sitemap():
-    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("instrumentos-virtuales/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
+    urls = [("", HOY, "1.0"), ("instrumentos/", HOY, "0.8"), ("instrumentos-virtuales/", HOY, "0.8")] + [(u, HOY, p) for u, p in PAGINAS_SITEMAP + [("academia/", "0.8"), ("museo/", "0.8"), ("test-instrumento/", "0.8")]] + [(f"instrumentos/{x['slug']}/", HOY, "0.9") for x in INST]
     filas = "".join(f"<url><loc>{BASE}/{u}</loc><lastmod>{d}</lastmod><priority>{p}</priority></url>\n" for u, d, p in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{filas}</urlset>\n'
 
@@ -401,7 +404,7 @@ exec(open(os.path.join(FUENTE, "paginas.py"), encoding="utf8").read())
 def main():
     escribir("estilos.css", leer("estilos-base.css") + "\n" + leer("estilos-extra.css"))
     escribir("index.html", pagina_inicio())
-    escribir("instrumentos-virtuales/index.html", pagina_virtuales())
+    escribir("instrumentos-virtuales/index.html", leer("explora/virtuales.html"))
     escribir("instrumentos/index.html", pagina_archivo())
     for i, x in enumerate(INST):
         escribir(f"instrumentos/{x['slug']}/index.html", pagina_instrumento(i, x))
@@ -409,6 +412,9 @@ def main():
     escribir("privacidad/index.html", pagina_privacidad())
     escribir("idiomas/index.html", REDIRECT)
     escribir_paginas_nuevas()
+    for slug in ("academia", "museo", "test-instrumento"):
+        escribir(f"{slug}/index.html", leer(f"explora/{slug}.html"))
+    exec(compile(leer("museo.py"), "museo.py", "exec"), globals())
     escribir("sitemap.xml", sitemap())
     escribir("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {BASE}/sitemap.xml\n")
     if SITIO.get("dominio"):

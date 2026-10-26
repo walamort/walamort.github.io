@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "kalimba",
+    "name": "Kalimba",
+    "family": "Lamelófonos",
+    "mechanism": "Las láminas se pulsan para hacerlas vibrar.",
+    "text": "Una forma de explorar melodías pulsando láminas. El número de notas y su distribución dependen del modelo.",
+    "context": "La kalimba moderna difundida por Hugh Tracey se vincula con tradiciones africanas de lamelófonos. Kalimba y mbira no son nombres intercambiables para todos los instrumentos de estas tradiciones.",
+    "try": "Alterna dos notas y escucha cuánto permanece cada sonido.",
+    "source": "https://www.kalimbamagic.com/our-story",
+    "sourceName": "Kalimba Magic · Historia de Hugh Tracey",
+    "video": "Y9g8OX6KB60"
+  },
+  {
+    "slug": "handpan",
+    "name": "Handpan",
+    "family": "Idiófonos de metal",
+    "mechanism": "Vibran campos de tono formados en una carcasa metálica.",
+    "text": "Se explora con golpes suaves de las manos. La escala, el tamaño y la respuesta cambian entre instrumentos.",
+    "context": "El Hang de PANArt es un antecedente de la familia conocida como handpan. Hang es el nombre del instrumento de PANArt; no identifica cualquier handpan.",
+    "try": "Escucha el ataque y la resonancia de una nota antes de añadir otra.",
+    "source": "https://panart.ch/en/instruments/sound-sculpture-hang",
+    "sourceName": "PANArt · El Hang y su denominación",
+    "video": "q45UK7hkBb4"
+  },
+  {
+    "slug": "tongue-drum",
+    "name": "Tongue drum",
+    "family": "Idiófonos de metal",
+    "mechanism": "Vibran lengüetas recortadas en el cuerpo metálico.",
+    "text": "Puede tocarse con baquetas o dedos según el modelo. La cantidad de lengüetas y la afinación no son universales.",
+    "context": "La serie de Walamort documenta este tambor de lengüetas de acero y una demostración de su sonido. Se distingue del handpan por sus lengüetas recortadas.",
+    "try": "Compara un golpe aislado con una secuencia lenta de dos notas.",
+    "source": "https://www.youtube.com/watch?v=yRpA4eIC70I",
+    "sourceName": "Walamort · Demostración de tongue drum",
+    "video": "yRpA4eIC70I"
+  }
+]
