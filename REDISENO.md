@@ -42,3 +42,27 @@ grabación/exportación. No se realizaron compras Hotmart, envíos de MailerLite
 reservas WhatsApp. No se añadieron cursos publicados, productos, testimonios ni
 proyectos de producción ficticios. El despliegue requiere comprobar GitHub Pages
 y el dominio después de publicar; una prueba local no acredita producción.
+
+## Ajuste de marca y dirección de imagen
+
+La portada usa ahora vino oscuro `#210b12`, crema `#fbefd9` y naranja
+`#f87927`, siguiendo la referencia proporcionada. El nombre separa Wala en crema
+y mort en naranja. Se mantienen ambientes distintos mediante superficies vino,
+papel cálido y cobre dentro de la misma paleta.
+
+Las seis tarjetas de recorrido usan escenas editoriales originales generadas con
+la herramienta integrada image_gen, sin personas: instrumentos del mundo,
+aprendizaje, handpan, escucha, grabación y escenario. Sus archivos WebP están en
+`assets/editorial/`, con nombres versionados y un `manifest.json` que conserva los
+prompts y la procedencia. No documentan instrumentos ni instalaciones del usuario.
+La academia utiliza una variante mayor del recurso de aprendizaje. La portada,
+la biografía y el bloque de producción conservan las fotos reales; se retiran
+la galería repetida y el retrato duplicado en clases.
+
+Las seis tarjetas suman unos 210 KB. Cargan de forma diferida, con dimensiones
+reservadas; el recurso mayor de Academy evita ampliar una miniatura. No se
+modificaron portadas comerciales ni recursos de los instrumentos interactivos.
+
+El chequeo de portada sirve las respuestas locales mediante intercepción de
+Playwright; así no depende del acceso de Chrome a un puerto local ni envía datos
+al exterior. Conserva las mismas comprobaciones de navegación e interacciones.

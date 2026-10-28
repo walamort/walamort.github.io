@@ -18,7 +18,14 @@ const fs = require('fs'), path = require('path'), http = require('http'), assert
     const page = await browser.newPage(), errors = [], missing = [];
     page.on('pageerror', e => errors.push(e.message));
     page.on('response', r => { if (r.url().startsWith(origin) && r.status() >= 400) missing.push(r.url()); });
-    await page.route('**/*', route => route.request().url().startsWith(origin) ? route.continue() : route.abort());
+    await page.route('**/*', async route => {
+      if (!route.request().url().startsWith(origin)) return route.abort();
+      let file = path.join(root, decodeURIComponent(new URL(route.request().url()).pathname));
+      try {
+        if (fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+        await route.fulfill({ status: 200, contentType: ({ '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.json': 'application/json' })[path.extname(file)] || 'application/octet-stream', body: fs.readFileSync(file) });
+      } catch { await route.fulfill({ status: 404, body: 'Not found' }); }
+    });
     for (const width of [320, 390, 768, 1440]) {
       await page.setViewportSize({ width, height: 1000 });
       await page.goto(origin);
@@ -74,6 +81,12 @@ const fs = require('fs'), path = require('path'), http = require('http'), assert
       assert.ok(await page.locator('body').innerText());
     }
     const nojs = await browser.newPage({ javaScriptEnabled: false, viewport: { width: 390, height: 900 } });
+    await nojs.route('**/*', async route => {
+      if (!route.request().url().startsWith(origin)) return route.abort();
+      let file = path.join(root, decodeURIComponent(new URL(route.request().url()).pathname));
+      if (fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+      await route.fulfill({ contentType: ({ '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript' })[path.extname(file)] || 'application/octet-stream', body: fs.readFileSync(file) });
+    });
     await nojs.goto(origin);
     assert.equal(await nojs.locator('.instrument-card a').count(), 9);
     assert.equal(await nojs.locator('#wm-nav-links').isVisible(), true);
