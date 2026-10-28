@@ -33,7 +33,12 @@ const fs = require('fs'), path = require('path'), http = require('http'), assert
       const overflow = await page.evaluate(() => [...document.querySelectorAll('body *')].filter(e => e.getBoundingClientRect().right > innerWidth + 1).map(e => e.tagName + '.' + e.className));
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, width + ': ' + overflow);
       assert.equal(await page.locator('h1').count(), 1);
+      assert.equal(await page.locator('#clases').evaluate(e => getComputedStyle(e).backgroundColor), 'rgb(33, 11, 18)');
+      assert.equal(await page.locator('#clases .topics > div').first().evaluate(e => getComputedStyle(e).backgroundColor), 'rgb(61, 28, 37)');
+      assert.equal(await page.locator('#clases .topics b').first().evaluate(e => getComputedStyle(e).color), 'rgb(251, 239, 217)');
+
       await page.screenshot({ path: path.join(out, 'walamort-' + width + '.png'), fullPage: true });
+      if ([390, 1440].includes(width)) await page.locator('#clases').screenshot({ path: path.join(out, 'walamort-clases-marca-' + width + '.png') });
       if (width < 861) {
         await page.locator('.wm-menu-toggle').click();
         assert.equal(await page.locator('.wm-menu-toggle').getAttribute('aria-expanded'), 'true');
