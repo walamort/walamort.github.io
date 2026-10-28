@@ -28,25 +28,14 @@
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<nav aria-label="Principal">
-  <div class="wrap">
-    <a class="logo" href="#inicio">Wala<span>mort</span></a>
-    <ul>
-      <li><a href="#semana">Esta semana</a></li>
-      <li><a href="instrumentos/">Instrumentos</a></li>
-      <li><a href="instrumentos-virtuales/">Virtuales</a></li>
-      <li><a href="#tienda">Métodos</a></li>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="academia/">Academy</a></li>
-      <li><a href="museo/">Museo</a></li>
-      <li><a href="test-instrumento/">Test musical</a></li>
-      <li><a href="comparador/">Comparador</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-      <li><a class="navpt" href="pt/" lang="pt-BR" title="Em português">PT</a></li>
-    </ul>
-  </div>
-  <div class="stripes" aria-hidden="true"><i></i><i></i><i></i></div>
-</nav>
+<nav class="wm-nav" aria-label="Principal"><div class="wrap wm-nav-inner">
+<a class="logo wm-logo" href="/"><span class="wm-mark" aria-hidden="true">♫</span>Wala<span>mort</span></a>
+<div class="wm-nav-links" id="wm-nav-links">
+<a href="#inicio" aria-current="page">Inicio</a><a href="museo/">Explorar</a><a href="academia/">Aprender</a><a href="instrumentos-virtuales/">Instrumentos</a><a href="#semana">Escuchar</a><a href="#servicios">Crear</a>
+<details class="wm-more"><summary>Más <span aria-hidden="true">⌄</span></summary><div class="wm-more-menu"><a href="#tienda">Tienda de métodos</a><a href="test-instrumento/">Test musical</a><a href="comparador/">Comparador</a><a href="#sobre">Sobre mí</a><a href="pt/" lang="pt-BR">Português</a></div></details>
+</div><a class="wm-nav-cta" href="#contacto">Clases y contacto <span aria-hidden="true">↗</span></a>
+<button class="wm-menu-toggle" type="button" aria-expanded="false" aria-controls="wm-nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+</div></nav>
 
 <main id="contenido">
 <div class="wrap">
@@ -80,8 +69,13 @@
   </div>
   <div class="premium-quick-actions"><a href="comparador/">Comparar instrumentos <span aria-hidden="true">↗</span></a><a href="test-instrumento/">Hacer el test musical <span aria-hidden="true">↗</span></a><a href="instrumentos-virtuales/">Tocar ahora <span aria-hidden="true">↗</span></a></div>
 </div></section>
-<section id="academia-museo"><div class="wrap"><span class="eyebrow">Explora · Aprende · Crea</span><h2>Encuentra tu camino <em class="script">musical</em></h2><p class="lead">Walamort conecta la educación musical, la exploración de instrumentos y la creación sonora. Descubre qué sonidos te atraen, explora sus historias y aprende a tu ritmo.</p><div class="journeys"><article><span class="tag">Gratis · 8 preguntas</span><h3>¿Qué instrumento va contigo?</h3><p>Un test de orientación para explorar instrumentos según tus gustos, presupuesto y condiciones de práctica.</p><a class="btn solid" href="test-instrumento/">Hacer el test →</a></article><article><span class="tag">Archivo en construcción</span><h3>Museo musical</h3><p>Conoce las familias, historias y sonidos de una colección que seguirá creciendo.</p><a class="btn solid" href="museo/">Explorar el museo →</a></article><article><span class="tag">Formación musical</span><h3>Walamort Academy</h3><p>Guías, clases y un curso de instrumentos del mundo en preparación.</p><a class="btn solid" href="academia/">Conocer la academia →</a></article></div></div></section>
-
+<section id="academia-museo" class="wm-editorial" aria-labelledby="wm-museum-title">
+<div class="wm-editorial-museum"><div class="wm-editorial-content"><span class="eyebrow">01 / Museo sonoro</span><h2 id="wm-museum-title">Un viaje sonoro <em>por el mundo.</em></h2><p>Instrumentos, tradiciones y formas de escuchar. Un archivo vivo que conecta la música con las culturas que la crean.</p><a class="wm-link-button" href="museo/">Explorar el museo <span aria-hidden="true">↗</span></a></div><div class="wm-museum-strip"><a href="instrumentos/kalimba/">Kalimba</a><a href="instrumentos/handpan/">Handpan</a><a href="instrumentos/tongue-drum/">Tongue drum</a></div></div>
+<div class="wm-editorial-side">
+<a class="wm-feature-tile wm-feature-test" href="test-instrumento/"><span class="eyebrow">Test gratuito · 8 preguntas</span><strong>¿Qué instrumento es para ti?</strong><span>Encuentra nuevas posibilidades según tus intereses y tu forma de aprender.</span><b>Comenzar test ↗</b></a>
+<a class="wm-feature-tile wm-feature-academy" href="academia/"><span class="eyebrow">Walamort Academy</span><strong>Aprende música a tu manera.</strong><span>Clases, guías y métodos para avanzar con confianza y creatividad.</span><b>Explorar Academy ↗</b></a>
+</div></section>
+<section class="wm-discover-band" aria-labelledby="wm-discover-title"><div class="wrap"><div><span class="eyebrow">Elige tu próxima experiencia</span><h2 id="wm-discover-title">De la curiosidad <em>al primer sonido.</em></h2></div><div class="wm-discover-actions"><a href="comparador/">Comparar instrumentos ↗</a><a href="instrumentos-virtuales/">Probar instrumentos virtuales ↗</a><a href="#tienda">Explorar métodos ↗</a></div></div></section>
 <section id="semana">
   <div class="wrap now">
     <article class="feature" id="feature">
@@ -117,7 +111,7 @@
   </div>
 </section>
 
-<section id="virtuales" aria-labelledby="virtuales-titulo">
+<section id="virtuales" class="wm-virtual-section" aria-labelledby="virtuales-titulo">
   <div class="wrap">
     <div class="head">
       <span class="eyebrow">Estudio interactivo</span>
@@ -125,9 +119,9 @@
       <p class="lead">Experimenta, crea melodías y descubre nuevos sonidos directamente desde tu navegador. Sin descargar nada.</p>
     </div>
     <div class="archive">
-      <a class="inst icard" href="instrumentos/handpan/studio/"><span class="tag">Disponible</span><h3>Handpan Studio</h3><p>Explora sus nueve notas, afinaciones, efectos y grabación.</p><span class="more">Tocar handpan →</span></a>
-      <a class="inst icard" href="instrumentos/kalimba/studio/"><span class="tag">Nuevo · Disponible</span><h3>Kalimba Studio</h3><p>Kalimba virtual de 17 lengüetas: toca, improvisa y graba tus melodías.</p><span class="more">Tocar kalimba →</span></a>
-      <a class="inst icard" href="instrumentos/tongue-drum/studio/">
+      <a class="inst icard wm-handpan" href="instrumentos/handpan/studio/"><span class="tag">Disponible</span><h3>Handpan Studio</h3><p>Explora sus nueve notas, afinaciones, efectos y grabación.</p><span class="more">Tocar handpan →</span></a>
+      <a class="inst icard wm-kalimba" href="instrumentos/kalimba/studio/"><span class="tag">Nuevo · Disponible</span><h3>Kalimba Studio</h3><p>Kalimba virtual de 17 lengüetas: toca, improvisa y graba tus melodías.</p><span class="more">Tocar kalimba →</span></a>
+      <a class="inst icard wm-tongue" href="instrumentos/tongue-drum/studio/">
         <span class="tag">Disponible para tocar</span>
         <h3>Tongue Drum Studio</h3>
         <p>Ocho notas, escalas, efectos y grabación de melodías. Toca con el teclado o con el ratón.</p>
@@ -958,4 +952,5 @@ document.querySelectorAll('.copy').forEach(function(b){
 })();
 </script>
 
+<script src="/assets/walamort-experience.js" defer></script>
 </body></html>
