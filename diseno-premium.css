@@ -77,3 +77,83 @@ footer{border-top:1px solid rgba(230,185,132,.24)}
 @media(max-width:700px){.premium-hero{min-height:690px;align-items:flex-end;background-position:60% center;padding:45px 22px 75px}.premium-hero:before{background:linear-gradient(0deg,rgba(18,6,10,.98) 0%,rgba(18,6,10,.86) 48%,rgba(18,6,10,.12) 100%)}.premium-hero-content{gap:14px;margin:0}.premium-hero h1{font-size:clamp(3.6rem,14vw,5.5rem)}.premium-hero h1 span{font-size:clamp(1.7rem,6vw,2.5rem)}.premium-hero-content>p{font-size:1rem;line-height:1.6}.premium-hero-stats{gap:20px;padding-top:15px}.premium-hero-caption{display:none}.premium-path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.premium-path{aspect-ratio:4/5;min-height:190px}.premium-path-bottom strong{font-size:1.5rem}}
 @media(max-width:380px){.premium-hero{min-height:730px}.premium-path{padding:11px;min-height:175px}.premium-path-bottom strong{font-size:1.3rem}.premium-hero-stats span{font-size:.68rem}}
 @media(prefers-reduced-motion:reduce){.premium-path,.premium-path:before{transition:none}.premium-path:hover,.premium-path:hover:before{transform:none}}
+
+
+/* Walamort Experience v3 — cinematic music editorial */
+:root{--wm-paper:#f2e9dc;--wm-ink:#2d141a;--wm-gold:#f0c68a}
+html{scroll-behavior:smooth}
+body{overflow-x:clip}
+.wm-nav{position:sticky;top:0;z-index:100;background:rgba(22,8,12,.96);box-shadow:0 4px 24px rgba(0,0,0,.17)}
+.wm-nav .wm-nav-inner{max-width:1440px;display:flex;align-items:center;gap:clamp(18px,2vw,38px);padding:12px clamp(20px,3vw,48px)}
+.wm-nav .wm-logo{display:inline-flex;align-items:center;gap:10px;font-size:clamp(24px,2.3vw,33px);white-space:nowrap;text-decoration:none;color:#f8e8d7}
+.wm-logo>span:last-child{margin-left:-10px}
+.wm-mark{display:grid;place-items:center;width:43px;height:43px;border:1px solid #dfb47a;border-radius:50%;font:normal 24px Georgia,serif;color:#e9bd80;flex-shrink:0}
+.wm-nav-links{display:flex;align-items:center;gap:clamp(12px,1.65vw,28px);margin-left:auto}
+.wm-nav-links>a,.wm-more summary{color:#f3e3d4;font-size:clamp(11px,.92vw,14px);text-decoration:none;white-space:nowrap;padding:13px 0;cursor:pointer}
+.wm-nav-links>a:hover,.wm-nav-links>a:focus-visible,.wm-more summary:hover{color:#e9bd80}
+.wm-nav-links>a[aria-current=page]{color:#f3c88c;border-bottom:2px solid #e3b77b}
+.wm-more{position:relative}.wm-more summary{list-style:none}.wm-more summary::-webkit-details-marker{display:none}
+.wm-more-menu{position:absolute;right:0;top:100%;min-width:220px;display:grid;gap:4px;background:#30151d;padding:12px;border:1px solid #7d4e4d;border-radius:8px;box-shadow:0 15px 40px #0b0209}
+.wm-more-menu a{color:#f7e8d6;text-decoration:none;font-size:13px;padding:10px 12px;border-radius:4px}.wm-more-menu a:hover{background:#4c2830}
+.wm-nav-cta{background:#e9bc80;color:#281119!important;padding:12px 18px;border-radius:50px;white-space:nowrap;text-decoration:none;font-size:12px;font-weight:700;transition:background .2s}
+.wm-nav-cta:hover{background:#ffe0a6}
+.wm-menu-toggle{display:none}
+.premium-hero{min-height:690px;max-height:none;margin-top:0}
+.premium-hero:before{background:linear-gradient(90deg,rgba(13,5,8,.95),rgba(19,7,10,.74) 38%,rgba(19,7,10,.15) 80%),linear-gradient(0deg,rgba(17,6,9,.85),transparent 42%)}
+.premium-hero-content{max-width:750px}
+.premium-hero h1{font-size:clamp(4.3rem,8.5vw,9rem)}
+.premium-hero .btn{border-radius:40px;padding:14px 22px}
+.premium-pathways{padding:20px 0 58px!important;background:var(--wm-paper)!important}
+.premium-pathways .premium-section-intro{padding-top:28px}
+.premium-path{border-radius:7px;min-height:245px}
+.premium-path-grid{gap:10px}
+.premium-path-bottom strong{font-size:clamp(1.25rem,1.9vw,2rem)}
+.wm-editorial{display:grid;grid-template-columns:1.05fr .95fr;min-height:640px;padding:0!important;border:0;background:#1c0e0e}
+.wm-editorial-museum{position:relative;min-height:640px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(90deg,rgba(17,6,9,.91),rgba(17,6,9,.3)),url('/fotos/flauta.webp') center 45%/cover no-repeat;padding:clamp(32px,5vw,76px)}
+.wm-editorial-content{max-width:550px}.wm-editorial-content .eyebrow{color:#f2c78c}
+.wm-editorial h2{font:500 clamp(3rem,5.4vw,6.5rem)/1 Georgia,serif;color:#fff0de;margin:18px 0}
+.wm-editorial h2 em{display:block;color:#f2c78c;font-weight:400}
+.wm-editorial-content p{font-size:clamp(1rem,1.25vw,1.2rem);line-height:1.8;max-width:37ch;color:#f3dfce}
+.wm-link-button,.wm-feature-tile b{display:inline-flex;align-items:center;width:max-content;max-width:100%;background:#f0c48a;color:#32131a;text-decoration:none;font-weight:700;border-radius:40px;padding:12px 20px;font-size:.86rem;margin-top:18px}
+.wm-link-button:hover,.wm-feature-tile:hover b{background:#ffe0ac}
+.wm-museum-strip{display:flex;gap:8px;flex-wrap:wrap;margin-top:35px}
+.wm-museum-strip a{border:1px solid #b99c78;border-radius:5px;color:#f9e6d1;text-decoration:none;background:rgba(19,8,11,.55);padding:10px 15px;font-size:.82rem}
+.wm-museum-strip a:hover{background:#53312e}
+.wm-editorial-side{display:grid;grid-template-rows:1fr 1fr}
+.wm-feature-tile{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:12px;min-height:320px;padding:clamp(30px,4vw,62px);text-decoration:none;color:#32151a;position:relative;isolation:isolate;overflow:hidden}
+.wm-feature-tile:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(249,242,231,.97),rgba(249,242,231,.86) 58%,rgba(249,242,231,.23)),url('/fotos/clases-walter.webp') 90% center/cover}
+.wm-feature-academy:before{background:linear-gradient(90deg,rgba(245,231,213,.98),rgba(245,231,213,.84) 60%,rgba(245,231,213,.16)),url('/fotos/estudio.webp') 90% center/cover}
+.wm-feature-tile .eyebrow{color:#915c39}
+.wm-feature-tile strong{font:500 clamp(2.2rem,3.5vw,4.2rem)/1.04 Georgia,serif;max-width:12ch;letter-spacing:-.04em}
+.wm-feature-tile>span:not(.eyebrow){max-width:35ch;font-size:.92rem;line-height:1.6}
+.wm-feature-tile b{margin-top:0}
+.wm-discover-band{background:#31141d;padding:48px 0!important}
+.wm-discover-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:35px}
+.wm-discover-band h2{font-size:clamp(2.2rem,4vw,4rem);margin-top:12px}.wm-discover-band h2 em{color:#e6bc84}
+.wm-discover-actions{display:flex;flex-wrap:wrap;gap:12px;max-width:540px}
+.wm-discover-actions a{color:#f9e5ce;text-decoration:none;padding:12px 16px;border:1px solid #97715c;border-radius:30px;font-size:.85rem}
+.wm-discover-actions a:hover{background:#53312f}
+.wm-virtual-section{background:#f2e9dc!important;color:#32151a}
+.wm-virtual-section .head h2,.wm-virtual-section .head p{color:#32151a}
+.wm-virtual-section .head .eyebrow{color:#88583b}
+.wm-virtual-section .archive{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.wm-virtual-section .inst.icard{display:flex;flex-direction:column;justify-content:flex-end;min-height:350px;padding:25px;color:#fff2e3;background:#2c141b;position:relative;isolation:isolate;overflow:hidden;border:1px solid #ab8059}
+.wm-virtual-section .inst.icard:before{content:"";position:absolute;inset:0;z-index:-2;background:var(--wm-card-image) center/cover;transition:transform .35s}
+.wm-virtual-section .inst.icard:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(17,6,9,.96),rgba(17,6,9,.4) 68%,rgba(17,6,9,.12))}
+.wm-virtual-section .inst.icard:hover:before{transform:scale(1.06)}
+.wm-handpan{--wm-card-image:url('/fotos/estudio.webp')}
+.wm-kalimba{--wm-card-image:url('/portadas/basico.png')}
+.wm-tongue{--wm-card-image:url('/portadas/td-basico.png')}
+.wm-virtual-section .inst.icard h3{font:500 clamp(1.6rem,2.6vw,2.6rem)/1.05 Georgia,serif;color:#fff2e3}
+.wm-virtual-section .inst.icard p{color:#f4e0d1}
+.wm-virtual-section .inst.icard .more{color:#f3c58d}
+#tienda{background:#f6efe3;color:#32151a}
+#tienda h2,#tienda .lead{color:#32151a}
+#tienda .eyebrow{color:#965d39}
+#tienda .prod{box-shadow:0 12px 38px rgba(35,12,15,.12)}
+#sobre{background:linear-gradient(125deg,#2a0d15,#3a1822)}
+@media(max-width:1100px){.wm-nav-links{gap:13px}.wm-nav-cta{padding:10px 12px}.wm-editorial{grid-template-columns:1fr 1fr}.wm-editorial-museum{padding:38px}.wm-feature-tile{padding:34px}.wm-feature-tile strong{font-size:clamp(2rem,3vw,3rem)}}
+@media(max-width:860px){.wm-nav .wm-nav-inner{display:flex;padding:12px 20px}.wm-menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;border:1px solid #b98e65;background:transparent;border-radius:6px;padding:10px;margin-left:0;cursor:pointer}.wm-menu-toggle span{height:2px;width:100%;background:#f4d6b1}.wm-nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:18px 22px 25px;background:#210c14;border-top:1px solid #6a4341;box-shadow:0 25px 35px #10060b;flex-direction:column;align-items:stretch;gap:2px;max-height:80vh;overflow-y:auto}.wm-nav-links.is-open{display:flex}.wm-nav-links>a,.wm-more summary{font-size:15px;padding:10px 8px}.wm-more-menu{position:static;box-shadow:none;border:0;background:#3a1b24}.wm-nav-cta{margin-left:auto}.wm-editorial{grid-template-columns:1fr}.wm-editorial-museum{min-height:550px}.wm-editorial-side{grid-template-columns:1fr 1fr;grid-template-rows:auto}.wm-feature-tile{min-height:340px}.wm-discover-band .wrap{flex-direction:column;align-items:flex-start}}
+@media(max-width:650px){.wm-nav .wm-logo{font-size:25px}.wm-mark{width:36px;height:36px;font-size:20px}.wm-nav-cta{font-size:11px;padding:10px 12px}.premium-hero{min-height:690px}.premium-path-grid{gap:9px}.premium-path{min-height:190px}.wm-editorial-museum{padding:42px 24px;min-height:560px}.wm-editorial h2{font-size:clamp(2.9rem,11vw,4.8rem)}.wm-editorial-side{grid-template-columns:1fr}.wm-feature-tile{min-height:295px;padding:32px 24px}.wm-feature-tile strong{font-size:clamp(2.6rem,9vw,3.7rem)}.wm-virtual-section .archive{grid-template-columns:1fr}.wm-virtual-section .inst.icard{min-height:300px}.wm-discover-band{padding:45px 0!important}.wm-discover-actions{flex-direction:column;align-items:stretch;width:100%}}
+@media(max-width:390px){.wm-nav-cta{font-size:0}.wm-nav-cta span{font-size:17px}.wm-nav .wm-logo{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.wm-virtual-section .inst.icard:before{transition:none}.wm-virtual-section .inst.icard:hover:before{transform:none}}
