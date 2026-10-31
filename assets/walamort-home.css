@@ -39,3 +39,25 @@
 .experience #clases .topics span{color:#dbc6b4}
 
 .experience :is(#clases,#preguntas) em.script{color:var(--brand-orange)}
+
+/* Keep text tokens consistent when a section changes its background. */
+.experience :is(.academy-scene,.virtual-scene,.services-scene,#sobre,#tienda){--fg:#32151d}
+.experience #sobre .chips li{color:var(--fg);background:#f3e7d5;border-color:#957767}
+.experience #tienda .helper{color:var(--fg);border-color:#957767}
+.experience #tienda .helper:hover{background:#edc89d;border-color:#713044}
+.experience :is(.academy-scene,.virtual-scene,.services-scene,#sobre,#tienda) :is(a,button,input,select,summary):focus-visible{outline-color:#713044}
+
+/* Dark panels nested inside light sections need their own text palette. */
+.experience #sobre .thesis,.experience #tienda .mlform{
+  --bg:#210b12;--surface:#34151d;--fg:#fbefd9;--muted:#dbc6b4;
+  --mustard:#f87927;--orange:#f87927;--line:#9b7580;
+  color:var(--fg);background:var(--surface);color-scheme:dark;
+}
+.experience #tienda .mlform h3{color:var(--fg)}
+.experience #tienda .mlform p{color:var(--muted)}
+.experience #tienda .mlform .eyebrow{color:var(--orange)}
+.experience #tienda .mlform .mlnote a{color:var(--fg);text-decoration:underline}
+.experience #tienda .mlform .btn.solid{background:#f87927;color:#210b12;border-color:#f87927}
+.experience #tienda .mlform .btn.solid:hover{background:#ffb377;border-color:#ffb377}
+.experience #tienda .mlform :is(a,button,input):focus-visible{outline-color:#f87927}
+.experience #tienda .mlform input::placeholder{color:var(--muted);opacity:1}
